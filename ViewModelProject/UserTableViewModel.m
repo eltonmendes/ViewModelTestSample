@@ -10,29 +10,43 @@
 #import "User.h"
 
 @interface UserTableViewModel ()
+@property (nonatomic, strong) RACSignal *updateTableSignal;
 @property (nonatomic, strong) NSArray *dataSource;
 @end
 
 @implementation UserTableViewModel
 
-//Passing the model already created
 -(instancetype)initWithModel:(id)model {
     
-    self = [super init];
-    if (self == nil) return nil;
-
-    User *user = model;
-    self.dataSource = [user mockUserArray];
+    if (self == [super init]) {
+        self.updateTableSignal = [[RACSubject subject] setNameWithFormat:@"UserTableViewModel updateTableSignal"];
+        
+        User *user = model;
+        @weakify(self);
+        [user mockUserArrayWithCompletion:^(NSMutableArray *users) {
+            @strongify(self);
+            self.dataSource = users;
+            [(RACSubject *)self.updateTableSignal sendNext:nil];
+        }];
+    }
+    
     return self;
 }
-//Passing without model -> Search on database for example now!
+
 - (instancetype)init {
     
-    self = [super init];
-    if (self == nil) return nil;
-    
-    User *user = [User new];
-    self.dataSource = [user mockUserArray];
+    if (self == [super init]) {
+         self.updateTableSignal = [[RACSubject subject] setNameWithFormat:@"UserTableViewModel updateTableSignal"];
+        
+        User *user = [User new];
+        @weakify(self);
+        [user mockUserArrayWithCompletion:^(NSMutableArray *users) {
+            @strongify(self);
+            self.dataSource = users;
+            [(RACSubject *)self.updateTableSignal sendNext:nil];
+        }];
+        
+    }
     return self;
 }
 

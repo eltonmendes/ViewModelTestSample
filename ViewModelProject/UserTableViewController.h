@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class UserTableViewModel;
+@class UserTableViewModel,RACSignal;
 
 @interface UserTableViewController : UITableViewController
 
 @property (nonatomic,strong) UserTableViewModel *viewModel;
+@property (nonatomic, readonly) RACSignal *listCompleteSignal;
+
+-(void)registerSignal;
 
 @end

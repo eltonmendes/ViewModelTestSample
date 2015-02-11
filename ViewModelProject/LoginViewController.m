@@ -7,8 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "UserTableViewController.h"
-#import "UserTableViewModel.h"
+#import "DashBoardViewController.h"
+#import "DashBoardViewModel.h"
 
 @interface LoginViewController ()
 
@@ -36,10 +36,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UserTableViewController *userTableViewController = segue.destinationViewController;
-    UserTableViewModel *userTableViewModel = [[UserTableViewModel alloc]init];
-    userTableViewController.viewModel = userTableViewModel;
-    
+
 }
 
 

@@ -6,11 +6,13 @@
 //  Copyright (c) 2015 CIT. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseViewModel.h"
 
 @class User;
 
-@interface UserTableViewModel : NSObject
+@interface UserTableViewModel : BaseViewModel
+
+@property (nonatomic, readonly) RACSignal *updateTableSignal;
 
 -(instancetype)initWithModel:(id)model;
 

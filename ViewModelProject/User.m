@@ -10,7 +10,7 @@
 
 @implementation User
 
-- (NSMutableArray *)mockUserArray {
+- (void)mockUserArrayWithCompletion:(void(^)(NSMutableArray* users))completionBlock {
     
     NSMutableArray *array = [NSMutableArray new];
     
@@ -20,7 +20,11 @@
         user.lastName = [NSString stringWithFormat:@"Last Name %i",i];
         [array addObject:user];
     }
-    return array;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //Simulating Database
+        completionBlock(array);
+    });
+
 }
 
 @end

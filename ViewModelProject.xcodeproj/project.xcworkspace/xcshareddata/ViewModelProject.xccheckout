@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>53F40BC2-94B0-4ACB-B3B3-3502D2991638</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ViewModelProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F4E416D7857A97025BB276B4D23154657930284C</key>
+		<string>https://github.com/eltonmendes/ViewModelTestSample.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ViewModelProject.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F4E416D7857A97025BB276B4D23154657930284C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eltonmendes/ViewModelTestSample.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F4E416D7857A97025BB276B4D23154657930284C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F4E416D7857A97025BB276B4D23154657930284C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ViewModelTestSample</string>
+		</dict>
+	</array>
+</dict>
+</plist>

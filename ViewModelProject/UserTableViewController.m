@@ -6,24 +6,32 @@
 //  Copyright (c) 2015 CIT. All rights reserved.
 //
 
+#import <EXTScope.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "UserTableViewController.h"
 #import "UserTableViewModel.h"
 #import "User.h"
 
 @interface UserTableViewController ()
+@property (nonatomic, strong) RACSignal *listCompleteSignal;
 
 @end
 
 @implementation UserTableViewController
 
+- (void)registerSignal {
+    self.listCompleteSignal = [[RACSubject subject] setNameWithFormat:@"UserTableViewController listCompleteSignal"];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    @weakify(self);
+    [self.viewModel.updateTableSignal subscribeNext:^(id x) {
+        @strongify(self);
+        //Update Signal
+        [self.tableView reloadData];
+        [(RACSubject *)self.listCompleteSignal sendNext:nil];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

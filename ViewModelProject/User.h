@@ -13,6 +13,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *lastName;
 
-- (NSMutableArray*)mockUserArray;
+- (void)mockUserArrayWithCompletion:(void(^)(NSMutableArray* users))completionBlock;
 
 @end

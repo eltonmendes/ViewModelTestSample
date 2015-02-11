@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZQz-Tz-kmE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8X-EU-J4k">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.4188462409" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="NgH-VB-Ysc">
                                         <variation key="heightClass=regular-widthClass=compact" constant="200"/>
@@ -129,6 +130,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="G8X-EU-J4k" id="wyq-LE-xq8"/>
+                        <outlet property="passwordTextField" destination="LgZ-ff-K3v" id="cD3-eX-KJB"/>
+                        <outlet property="usernameTextField" destination="CqP-gD-DMZ" id="PI1-wP-Ubr"/>
                         <segue destination="ZBo-Z4-FpT" kind="show" identifier="login" id="QO8-cZ-dG3"/>
                     </connections>
                 </viewController>
@@ -145,6 +149,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wlF-JZ-dwT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zDC-OL-V3c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bol-gb-Nj1">
@@ -245,16 +250,16 @@
                                 <exclude reference="Gua-ht-RVQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="QVg-XT-0Nu"/>
-                                <exclude reference="WCa-YC-F1q"/>
-                                <exclude reference="fCM-B8-a8i"/>
-                                <exclude reference="Jbx-ZC-NUn"/>
-                                <exclude reference="X1c-Xs-e5W"/>
-                                <exclude reference="grh-mX-JZG"/>
                                 <exclude reference="XTj-Fy-ej1"/>
                                 <exclude reference="z8s-uv-rDc"/>
                                 <exclude reference="jvA-33-xp6"/>
                                 <exclude reference="zKx-7K-S3K"/>
+                                <exclude reference="Jbx-ZC-NUn"/>
+                                <exclude reference="X1c-Xs-e5W"/>
+                                <exclude reference="grh-mX-JZG"/>
+                                <exclude reference="QVg-XT-0Nu"/>
+                                <exclude reference="WCa-YC-F1q"/>
+                                <exclude reference="fCM-B8-a8i"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -264,16 +269,16 @@
                                 <include reference="Gua-ht-RVQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="QVg-XT-0Nu"/>
-                                <include reference="WCa-YC-F1q"/>
-                                <include reference="fCM-B8-a8i"/>
-                                <include reference="Jbx-ZC-NUn"/>
-                                <include reference="X1c-Xs-e5W"/>
-                                <include reference="grh-mX-JZG"/>
                                 <include reference="XTj-Fy-ej1"/>
                                 <include reference="z8s-uv-rDc"/>
                                 <include reference="jvA-33-xp6"/>
                                 <include reference="zKx-7K-S3K"/>
+                                <include reference="Jbx-ZC-NUn"/>
+                                <include reference="X1c-Xs-e5W"/>
+                                <include reference="grh-mX-JZG"/>
+                                <include reference="QVg-XT-0Nu"/>
+                                <include reference="WCa-YC-F1q"/>
+                                <include reference="fCM-B8-a8i"/>
                             </mask>
                         </variation>
                     </view>
@@ -290,6 +295,7 @@
             <objects>
                 <tableViewController id="5Yp-rs-kN7" customClass="UserTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0fu-AC-AYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
